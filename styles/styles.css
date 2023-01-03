@@ -1,0 +1,199 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  
+:root {
+    --ff-primary: 'League Spartan', sans-serif;
+    --fs-base: 0.938rem; /*font-size: 15px;*/
+    --fw-base: 400;
+    --fw-medium: 500;
+    --fw-semibold: 700;
+
+    --clr-primary: hsl(300, 43%, 22%);
+    --clr-primary-light: hsl(333, 80%, 67%);
+    --clr-secondary: hsl(303, 10%, 53%);
+    --clr-secondary-white: hsl(300, 24%, 96%);
+}
+body {
+    font-family: var(--ff-primary);
+}
+.content {
+    display: grid;
+    row-gap: 2rem;
+    margin-inline: 1.5rem;
+    margin-block: 2rem;
+    row-gap: 4rem;
+}
+.titles {
+    display: grid;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    color: var(--clr-primary);
+    text-align: center;
+    padding: 1.6rem;
+    row-gap: 1rem;
+}
+.titles > h1 {
+    font-size: 1.7rem;
+    padding-inline: 3rem;
+    line-height: 0.8;
+}
+.titles > p {
+    font-weight: var(--fw-base);
+    color: var(--clr-secondary);
+}
+.reviews {
+    display: grid;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    color: var(--clr-primary);
+    text-align: center;
+    row-gap: 1.5rem;
+}
+.ratings > img {
+  width: 1rem;
+}
+.reviewers-profile {
+    display: grid;
+    color: var(--clr-secondary-white);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    row-gap: 1rem;
+}
+.reviewer-profile-1,
+.reviewer-profile-2,
+.reviewer-profile-3 {
+    display: grid;
+    color: var(--clr-secondary-white);
+    background-color: var(--clr-primary);
+    border-radius: 0.4rem;
+    row-gap: 1rem;
+    padding: 2.5rem;
+}
+.profile {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    column-gap: 1rem;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+}
+.profile-image {
+    width: 2.5rem;
+    border-radius: 1.5rem;
+}
+.profile-info {
+  line-height: 1.2;
+}
+.profile-status {
+  color: var(--clr-primary-light);
+}
+.upper-section {
+  display: grid;
+}
+.lower-section {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .content {
+    max-width: 85rem;
+    padding: 5.5rem;
+    margin-inline: auto;
+  }
+  .upper-section {
+    grid-template-columns: 1fr 1fr;
+  }
+  .titles {
+    text-align: start;
+    padding: 0;
+    max-width: 21.875rem;
+  }
+  .titles > h1 {
+    padding-inline: 0;
+    max-width: 13.75rem;
+    word-spacing: 5px;
+    line-height: 1;
+  }
+  .lower-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 20rem;
+  }
+  .reviewer-profile-1,
+  .reviewer-profile-2,
+  .reviewer-profile-3 {
+    max-width: 22rem;
+    max-height: 16rem;
+  }
+  .review-1,
+  .review-2,
+  .review-3 {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    column-gap: min(1rem, 2.5rem);
+    text-align: start;
+  }
+  .review-2 {
+    padding-left: 2.2rem;
+  }
+  .review-3 {
+    padding-left: 4.4rem;
+  }
+  .reviewer-profile-2 {
+    margin-top: 1rem;
+  }
+  .reviewer-profile-3 {
+    margin-top: 2rem;
+  }
+  .reviews {
+    margin-left: 5rem;
+  }
+}
